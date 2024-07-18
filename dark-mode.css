@@ -1,0 +1,146 @@
+/**
+ * Dark mode for code snippets
+ * Based on the default theme for Google Code Prettify
+ */
+.quiet {
+    color: #e0e0e0 !important;
+}
+
+body {
+    background-color: #121212;
+    color: #e0e0e0 !important;
+}
+
+pre.prettyprint {
+    background-color: #1e1e1e;
+    color: #e0e0e0;
+    padding: 2px;
+    border: 1px solid #888;
+}
+
+.cline-neutral {
+    background-color: #121212 !important;
+}
+
+.cline-yes {
+    background-color: #4d9221 !important;
+}
+
+.cline-no {
+    background-color: #c21f39 !important;
+}
+
+.cstat-no {
+    background: #96283b !important;
+}
+
+@media screen {
+    .pln {
+        color: #e0e0e0;
+    }
+    .str {
+        color: #a8ff60;
+    }
+    .kwd {
+        color: #ff79c6;
+    }
+    .com {
+        color: #6272a4;
+    }
+    .typ {
+        color: #8be9fd;
+    }
+    .lit {
+        color: #bd93f9;
+    }
+    .pun,
+    .opn,
+    .clo {
+        color: #ffb86c;
+    }
+    .tag {
+        color: #ff79c6;
+    }
+    .atn {
+        color: #8be9fd;
+    }
+    .atv {
+        color: #50fa7b;
+    }
+    .dec,
+    .var {
+        color: #8be9fd;
+    }
+    .fun {
+        color: #ff5555;
+    }
+    .high {
+        color: #4d9221;
+    }
+    .medium {
+        color: #f9cd0b;
+    }
+    .low {
+        color: #c21f39;
+    }
+}
+
+@media print, projection {
+    .str {
+        color: #a8ff60;
+    }
+    .kwd {
+        color: #ff79c6;
+        font-weight: bold;
+    }
+    .com {
+        color: #6272a4;
+        font-style: italic;
+    }
+    .typ {
+        color: #8be9fd;
+        font-weight: bold;
+    }
+    .lit {
+        color: #bd93f9;
+    }
+    .pun,
+    .opn,
+    .clo {
+        color: #ffb86c;
+    }
+    .tag {
+        color: #ff79c6;
+        font-weight: bold;
+    }
+    .atn {
+        color: #8be9fd;
+    }
+    .atv {
+        color: #50fa7b;
+    }
+}
+
+ol.linenums {
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+li.L0,
+li.L1,
+li.L2,
+li.L3,
+li.L5,
+li.L6,
+li.L7,
+li.L8 {
+    list-style-type: none;
+}
+
+li.L1,
+li.L3,
+li.L5,
+li.L7,
+li.L9 {
+    background: #2c2c2c;
+}
