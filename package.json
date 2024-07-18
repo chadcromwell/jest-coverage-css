@@ -4,7 +4,7 @@
 	"description": "Are those coverage reports too bright? Inject dark mode into your Jest coverage reports! Also supports custom themes.",
 	"main": "./injectCSSIntoLcovReport.js",
 	"bin": {
-		"jest-coverage-theme": "./injectCSSIntoLcovReport.js"
+		"jest-coverage-theme": "injectCSSIntoLcovReport.js"
 	},
 	"scripts": {
 		"start": "node injectCSSIntoLcovReport.js"
