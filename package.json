@@ -1,5 +1,5 @@
 {
-	"name": "jest-coverage-css",
+	"name": "jest-coverage-theme",
 	"version": "1.0.0",
 	"description": "Are those coverage reports too bright? Inject dark mode into your Jest coverage reports! Also supports custom themes.",
 	"main": "./injectCSSIntoLcovReport.js",
