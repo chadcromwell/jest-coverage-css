@@ -1,12 +1,7 @@
-import { readFileSync, readdirSync, writeFileSync } from 'fs';
-import { dirname, join } from 'path';
-import yargs from 'yargs/yargs';
-import { hideBin } from 'yargs/helpers';
-import { fileURLToPath } from 'url';
-
-// Get the directory name of the current module
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = dirname(__filename);
+const { readFileSync, readdirSync, writeFileSync } = require('fs');
+const { join } = require('path');
+const yargs = require('yargs/yargs');
+const { hideBin } = require('yargs/helpers');
 
 let css_file_path = '';
 
