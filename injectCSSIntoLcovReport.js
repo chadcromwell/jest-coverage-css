@@ -6,6 +6,7 @@ const yargs = require('yargs/yargs');
 const { hideBin } = require('yargs/helpers');
 
 let css_file_path = '';
+let root_dir = process.cwd();
 
 // Parse command-line arguments
 const argv = yargs(hideBin(process.argv)).option('css-path', {
@@ -16,11 +17,12 @@ const argv = yargs(hideBin(process.argv)).option('css-path', {
 
 // If a custom CSS file path is provided, use it instead
 if (argv['css-path']) {
-	css_file_path = join(__dirname, argv['css-path']);
+	css_file_path = join(root_dir, argv['css-path']);
+	console.log(`Using custom CSS file ${css_file_path}`);
 } else {
-	console.log('Using default CSS file path');
 	// Set default css file path to the one provided by this package
-	css_file_path = join(__dirname, 'node_modules/jest-coverage-dark-mode/dark-mode.css');
+	css_file_path = join(__dirname, 'dark-mode.css');
+	console.log(`Using default CSS file ${css_file_path}`);
 }
 
 // Read the CSS file
@@ -40,6 +42,7 @@ try {
  * @returns {void} nothing
  */
 function injectCSSIntoLcovReport(root_dir) {
+	let logged_injection = false;
 	let success = false;
 	const dirs_to_process = [root_dir];
 
@@ -56,8 +59,13 @@ function injectCSSIntoLcovReport(root_dir) {
 			if (entry.isDirectory()) {
 				// If the entry is an lcov-report directory, inject the CSS
 				if (entry.name === 'lcov-report') {
+					// Log a message if this is the first time injecting CSS
+					if (!logged_injection) {
+						console.log('Injecting CSS into...');
+						logged_injection = true;
+					}
 					const prettify_css_path = join(entry_path, 'prettify.css');
-					console.log(`Injecting CSS into ${prettify_css_path}`);
+					console.log(`${prettify_css_path}`);
 					writeFileSync(prettify_css_path, css_content, 'utf-8');
 					success = true;
 					// Otherwise, add the directory to the list of directories to process
@@ -79,5 +87,4 @@ function injectCSSIntoLcovReport(root_dir) {
 }
 
 // Get the root directory of where the script is being run and inject the CSS
-const root_dir = process.cwd();
 injectCSSIntoLcovReport(root_dir);
