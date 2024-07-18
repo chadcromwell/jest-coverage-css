@@ -1,3 +1,5 @@
+#!/usr/bin/env node
+
 const { readFileSync, readdirSync, writeFileSync } = require('fs');
 const { join } = require('path');
 const yargs = require('yargs/yargs');
